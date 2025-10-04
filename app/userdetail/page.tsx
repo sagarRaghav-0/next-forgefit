@@ -1,8 +1,10 @@
 'use client';
 import { FitnessGoal, UserDetail } from '@/types/userDetail';
 import { validation } from '@/validation/validation';
+import Image from "next/image";
 import Link from 'next/link';
 import React, { useState } from 'react';
+
 
 const UserDetailForm = () => {
     const [userDetail, setUserDetail] = useState<UserDetail>({
@@ -63,7 +65,8 @@ const UserDetailForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 h-screen w-screen">
             {/* Left Image */}
             <div className="p-8">
-                <img
+                <Image
+
                     src="/images/second.webp"
                     alt="Fitness"
                     className="w-full h-full object-cover scale-x-[-1] rounded-2xl shadow-lg"
