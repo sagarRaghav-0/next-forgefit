@@ -22,19 +22,12 @@ export const metadata: Metadata = {
   title: "My Website",
   description: "Using Anton and Nunito fonts",
 };
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
       <html lang="en" className={`${nunito.variable} ${anton.variable}`}>
         <body>
-          {/* <ReduxProvider> */}
           {children}
-          {/* </ReduxProvider> */}
         </body>
       </html>
     </ClerkProvider>
