@@ -1,8 +1,23 @@
 "use client";
 
-import { SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+
+import { useEffect } from "react";
 
 export default function Home() {
+  const { isSignedIn, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.replace('/dashboard');
+    }
+  }, [isLoaded, isSignedIn, router]);
+
+  if (!isLoaded) {
+    return <div className="h-screen flex items-center justify-center">Loading...</div>;
+  }
   return (
     <div className="relative h-screen w-screen bg-[url('/images/first.webp')] bg-cover bg-center bg-no-repeat">
       <div className="relative z-[2] pr-[6vw] flex flex-col items-end justify-center h-full text-white px-6">
