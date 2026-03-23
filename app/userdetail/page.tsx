@@ -66,8 +66,8 @@ const UserDetailForm = () => {
             {/* Left Image */}
             <div>
                 <Image
-                    width={400}
-                    height={400}
+                    width={500}
+                    height={500}
                     src="/images/second.webp"
                     alt="Fitness"
                     className="w-full h-full object-cover scale-x-[-1] rounded-2xl shadow-lg"
