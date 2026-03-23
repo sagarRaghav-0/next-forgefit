@@ -62,11 +62,12 @@ const UserDetailForm = () => {
 
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 h-screen w-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-screen w-screen overflow-x-hidden p-8 ">
             {/* Left Image */}
-            <div className="p-8">
+            <div>
                 <Image
-
+                    width={400}
+                    height={400}
                     src="/images/second.webp"
                     alt="Fitness"
                     className="w-full h-full object-cover scale-x-[-1] rounded-2xl shadow-lg"

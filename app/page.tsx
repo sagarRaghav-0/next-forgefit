@@ -16,7 +16,7 @@ export default function Home() {
   }, [isLoaded, isSignedIn, router]);
 
   if (!isLoaded) {
-    return <div className="h-screen flex items-center justify-center">Loading...</div>;
+    return <div className="h-screen flex items-center justify-center bg-black text-amber-50">Loading...</div>;
   }
   return (
     <div className="relative h-screen w-screen bg-[url('/images/first.webp')] bg-cover bg-center bg-no-repeat">
@@ -35,7 +35,7 @@ export default function Home() {
           {/* Buttons */}
           <div className="mt-6 flex gap-4">
             <SignedOut>
-              <SignInButton mode="modal" forceRedirectUrl="/dashboard">
+              <SignInButton mode="modal" forceRedirectUrl="/userdetail">
                 <button
                   className="relative overflow-hidden rounded-full cursor-pointer px-6 py-2 font-bold text-white group"
                 >
